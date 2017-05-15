@@ -25,7 +25,7 @@ var BorderMethods = (function(others){
 			// console.log("elements[i]", elements[i]);
 			elements[i].classList.remove("selectedCar");
 			elements[i].classList.add("normalBorder");
-			elements[i].style.backgroundColor = "cornsilk"
+			elements[i].style.backgroundColor = "cornsilk";
 		}
 	};
 

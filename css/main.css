@@ -4,16 +4,18 @@
 	padding: .5rem;
 }
 
-.col-md-3 {
-	height: 35rem;
-	overflow: auto;
-	margin: 2rem 0;
-	/*margin-left: 6%;*/
+.row:last-child {
+	/*margin-right: 5rem;*/
 }
 
-.row:last-child {
-	margin-right: 6%;
+.col-md-3 {
+	/*height: 35rem;*/
+	height: 30rem;
+	overflow: auto;
+	margin: 2rem 0;
+	margin-left: 6.5rem;
 }
+
 
 .normalBorder {
 	border: solid 1.5px black;
