@@ -15,10 +15,10 @@ var BorderMethods = (function(others){
 		element.classList.remove("normalBorder");
 		element.style.backgroundColor = color; //read about this method
 		element.classList.add("selectedCar");
-	},
+	};
 
 	others.restoreBorders = function(){
-		let elements = document.getElementsByClassName("prodCard"); //find out why this is undefined
+		let elements = document.getElementsByClassName("prodCard");
 		console.log("elements", elements.length); //I'm getting a pseudo-array.
 
 		for (var i = 0; i < elements.length; i++){

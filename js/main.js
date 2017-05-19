@@ -29,18 +29,42 @@ function populatePage(inventory){
   });
 
   container.innerHTML = cardDivRow;
-
-  // Now that the DOM is loaded, establish all the event listeners needed
-  CarLot.activateEvents();
 }
+
 
 /** Load the inventory and send a callback function to be
 invoked after the process is complete **/
 CarLot.loadInventory(populatePage);
 
+/**Event listener that on wrapper that defines the prodCard**/
+let wrapper = document.getElementById("wrapper");
+let textArea = document.getElementById("textArea");
+let description = "";
 
-// console.log("CarLot", CarLot);
-// console.log(8 % 3);
+wrapper.addEventListener("click", function(event){ //move  this listener to main
+
+  let prodCard = event.target.closest(".prodCard");
+  console.log("prodCard", prodCard);
+  CarLot.activateEvents(prodCard);
+  // console.log("element", event.target, "closest div", event.target.closest(".prodCard"));
+  // description.innerHTML = "";
+
+  textArea.value = "";
+  textArea.focus();
+
+  description = prodCard.lastElementChild;
+  textArea.removeEventListener("keyup", function(e){
+    description.innerHTML = e.target.value;
+  });
+  // console.log("description", description);
+  console.log("description in wrapper listener", description);
+});
+
+textArea.addEventListener("keyup", function(e){ //move this to main
+  console.log("'description' as seen by textArea listener", description);
+  // console.log("e");
+  description.innerHTML = e.target.value;
+});
 
 /**************/
 
